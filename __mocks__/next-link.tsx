@@ -1,0 +1,18 @@
+import React from 'react'
+
+const Link = ({
+  href,
+  children,
+  ...props
+}: {
+  href: string
+  children: React.ReactNode
+  [key: string]: unknown
+}) => (
+  <a href={href} {...props}>
+    {children}
+  </a>
+)
+
+Link.displayName = 'Link'
+export default Link
