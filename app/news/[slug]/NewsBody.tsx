@@ -95,8 +95,12 @@ export default function NewsBody({ article }: { article: Article }) {
           </Link>
           <p style={{ fontSize: 12 }}>© 2026 Sport News. All rights reserved.</p>
           <div style={{ display: "flex", gap: 8 }}>
-            {["f", "in", "✕"].map(i => (
-              <span key={i} style={{ width: 32, height: 32, border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, cursor: "pointer" }}>{i}</span>
+            {[
+              { label: "f", url: "https://www.facebook.com/login/" },
+              { label: "in", url: "https://www.instagram.com/accounts/login/" },
+              { label: "✕", url: "https://x.com/login" }
+            ].map(item => (
+              <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" style={{ width: 32, height: 32, border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, cursor: "pointer", textDecoration: "none", color: "#aaa" }}>{item.label}</a>
             ))}
           </div>
         </div>

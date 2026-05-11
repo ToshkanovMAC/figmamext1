@@ -1,6 +1,3 @@
-/**
- * FideRating.tsx — unit testlar
- */
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import FideRating from '../app/components/FideRating'
@@ -43,7 +40,6 @@ describe('FideRating — render', () => {
   it('Magnus Carlsen 1-o\'rinda (birinchi qator)', () => {
     render(<FideRating />)
     const rows = screen.getAllByRole('row')
-    // rows[0] = thead, rows[1] = 1-chi o'yinchi
     expect(rows[1]).toHaveTextContent('Magnus Carlsen')
     expect(rows[1]).toHaveTextContent('2830')
   })

@@ -1,6 +1,3 @@
-/**
- * WeatherWidget.tsx — unit testlar
- */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import WeatherWidget from '../app/components/WeatherWidget'
@@ -61,7 +58,6 @@ describe('WeatherWidget — muvaffaqiyatli yuklanish', () => {
   it('harorat raqami ko\'rsatiladi', async () => {
     render(<WeatherWidget />)
     await waitFor(() => {
-      // 28 raqami DOM da mavjud
       expect(screen.getAllByText(/28/).length).toBeGreaterThan(0)
     })
   })
@@ -83,7 +79,6 @@ describe('WeatherWidget — muvaffaqiyatli yuklanish', () => {
   it('5 kunlik prognoz ko\'rsatiladi', async () => {
     render(<WeatherWidget />)
     await waitFor(() => {
-      // Kamida 1 ta hafta kuni topilishi kerak
       const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
       const found = days.some(d => {
         try { return screen.getAllByText(d).length > 0 } catch { return false }

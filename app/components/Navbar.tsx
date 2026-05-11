@@ -37,7 +37,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <button className="btn-primary" style={{ fontSize: 11, padding: "8px 20px" }}>Login</button>
+        <div style={{ fontSize: 20 }}>🏆</div>
 
         <button onClick={() => setOpen(!open)} style={{ display: "none", background: "none", border: "none", cursor: "pointer", fontSize: 22 }} className="burger">☰</button>
       </div>

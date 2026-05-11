@@ -1,6 +1,3 @@
-/**
- * Navbar.tsx — unit testlar
- */
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
@@ -86,7 +83,6 @@ describe('Navbar — mobil menyu', () => {
 
     await user.click(screen.getByText('☰'))
 
-    // Mobil menyuda linklar paydo bo'ladi (desktop + mobile = 2x)
     expect(screen.getAllByText('Home').length).toBeGreaterThanOrEqual(1)
   })
 
@@ -94,10 +90,9 @@ describe('Navbar — mobil menyu', () => {
     const user = userEvent.setup()
     render(<Navbar />)
 
-    await user.click(screen.getByText('☰'))  // ochish
-    await user.click(screen.getByText('☰'))  // yopish
+    await user.click(screen.getByText('☰'))
+    await user.click(screen.getByText('☰'))
 
-    // nav hali ham mavjud
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 
@@ -110,7 +105,6 @@ describe('Navbar — mobil menyu', () => {
     const allCategoryLinks = screen.getAllByText('Category')
     await user.click(allCategoryLinks[allCategoryLinks.length - 1])
 
-    // komponent hali render bo'lib turibdi
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 })

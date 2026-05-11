@@ -1,13 +1,8 @@
-/**
- * NewsBody.tsx — unit testlar
- * Maqola sahifasining asosiy body qismi
- */
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import NewsBody from '../app/news/[slug]/NewsBody'
 import { articles, type Article } from '../app/data'
 
-// fetch ni mock qilamiz (WeatherWidget + ExchangeRates uchun)
 vi.stubGlobal('fetch', vi.fn().mockReturnValue(new Promise(() => {})))
 
 const sampleArticle: Article = articles[0] // featured maqola
@@ -42,7 +37,6 @@ describe('NewsBody — render', () => {
 
   it('maqola matni (content HTML) render bo\'ladi', () => {
     render(<NewsBody article={sampleArticle} />)
-    // content ichidagi matn ko'rsatilishi kerak
     expect(document.querySelector('[dangerouslySetInnerHTML]') !== null ||
       document.body.innerHTML.includes('Rankings')).toBe(true)
   })
@@ -67,7 +61,6 @@ describe('NewsBody — render', () => {
 
   it('asosiy maqoladan tashqari 3 ta related maqola ko\'rsatiladi', () => {
     render(<NewsBody article={sampleArticle} />)
-    // related = articles.filter(a => a.slug !== article.slug).slice(0, 3)
     const related = articles
       .filter(a => a.slug !== sampleArticle.slug)
       .slice(0, 3)

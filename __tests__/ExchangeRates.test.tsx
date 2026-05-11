@@ -1,7 +1,4 @@
-/**
- * ExchangeRates.tsx — unit testlar
- * fetch mock qilinadi
- */
+
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import ExchangeRates from '../app/components/ExchangeRates'
@@ -15,7 +12,7 @@ const apiResponse = {
 
 describe('ExchangeRates — yuklanish (loading)', () => {
   beforeEach(() => {
-    mockFetch.mockReturnValue(new Promise(() => {})) // hech qachon hal bo'lmaydi
+    mockFetch.mockReturnValue(new Promise(() => {}))
   })
 
   it('komponent render bo\'ladi', () => {

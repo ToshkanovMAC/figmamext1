@@ -322,10 +322,14 @@ export default function Home() {
           </Link>
           <p style={{ fontSize: 14 }}>© 2026 Sport News. All rights reserved.</p>
           <div style={{ display: "flex", gap: 12 }}>
-            {["f", "in", "✕"].map(i => (
-              <span key={i} style={{ width: 40, height: 40, border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, cursor: "pointer", transition: "all 0.2s" }}
+            {[
+              { label: "f", url: "https://www.facebook.com/login/" },
+              { label: "in", url: "https://www.instagram.com/accounts/login/" },
+              { label: "✕", url: "https://x.com/login" }
+            ].map(item => (
+              <a key={item.label} href={item.url} target="_blank" rel="noopener noreferrer" style={{ width: 40, height: 40, border: "1px solid #333", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, cursor: "pointer", transition: "all 0.2s", textDecoration: "none", color: "#aaa" }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = "var(--primary)")}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = "#333")}>{i}</span>
+                onMouseLeave={e => (e.currentTarget.style.borderColor = "#333")}>{item.label}</a>
             ))}
           </div>
         </div>

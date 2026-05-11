@@ -1,16 +1,11 @@
-/**
- * CommentSection.tsx — unit testlar
- */
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import CommentSection from '../app/components/CommentSection'
 
-// window.open mock
 const mockOpen = vi.fn()
 vi.stubGlobal('open', mockOpen)
 
-// window.location mock
 vi.stubGlobal('location', { href: 'http://localhost/test-article' })
 
 describe('CommentSection — dastlabki render', () => {

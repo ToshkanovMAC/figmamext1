@@ -1,13 +1,6 @@
-/**
- * app/data.ts — unit testlar
- * articles va clubs ma'lumotlari tekshiriladi
- */
 import { describe, it, expect } from 'vitest'
 import { articles, clubs, type Article } from '../app/data'
 
-// ─────────────────────────────────────────────────────────
-// articles
-// ─────────────────────────────────────────────────────────
 describe('articles', () => {
   it('massiv mavjud va bo\'sh emas', () => {
     expect(articles).toBeDefined()
@@ -83,14 +76,10 @@ describe('articles', () => {
   it('date formati string va to\'ldirilgan', () => {
     articles.forEach(a => {
       expect(typeof a.date).toBe('string')
-      expect(a.date).toMatch(/\d{4}/)  // yil mavjud
+      expect(a.date).toMatch(/\d{4}/)
     })
   })
 })
-
-// ─────────────────────────────────────────────────────────
-// clubs
-// ─────────────────────────────────────────────────────────
 describe('clubs', () => {
   it('massiv mavjud va bo\'sh emas', () => {
     expect(clubs).toBeDefined()
